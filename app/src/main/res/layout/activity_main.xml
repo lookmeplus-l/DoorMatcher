@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#1A1A2E"
+    android:padding="24dp">
+
+    <!-- 标题栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="24dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="🚪 门图识别"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="⚙️ 设置"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#3A3A5E" />
+    </LinearLayout>
+
+    <!-- 状态显示 -->
+    <TextView
+        android:id="@+id/tv_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="初始化中..."
+        android:textColor="#AAAAAA"
+        android:textSize="16sp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- 数据库进度 -->
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:layout_marginBottom="32dp"
+        android:max="100"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal" />
+
+    <!-- 主按钮区 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn_start_capture"
+            android:layout_width="240dp"
+            android:layout_height="80dp"
+            android:text="🎮 开始识别"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:backgroundTint="#4CAF50" />
+
+        <Button
+            android:id="@+id/btn_manual_select"
+            android:layout_width="240dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="16dp"
+            android:text="📷 手动选图"
+            android:textSize="16sp"
+            android:textColor="#CCCCCC"
+            android:backgroundTint="#2A2A4E" />
+
+        <TextView
+            android:layout_width="240dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="首次使用需授予屏幕录制权限\n请在横屏模式下使用"
+            android:textColor="#666666"
+            android:textSize="12sp"
+            android:gravity="center" />
+
+    </LinearLayout>
+
+</LinearLayout>

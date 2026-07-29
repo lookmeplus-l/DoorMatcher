@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#1A1A2E"
+    android:padding="24dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🎯 比对结果"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp" />
+
+    <TextView
+        android:id="@+id/tv_best_match"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="计算中..."
+        android:textColor="#90EE90"
+        android:textSize="20sp"
+        android:layout_marginBottom="16dp" />
+
+    <ImageView
+        android:id="@+id/iv_best_match"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scaleType="fitCenter"
+        android:background="#2A2A4E"
+        android:contentDescription="最佳匹配图" />
+
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="← 返回"
+        android:backgroundTint="#3A3A5E"
+        android:textColor="#FFFFFF" />
+
+</LinearLayout>
