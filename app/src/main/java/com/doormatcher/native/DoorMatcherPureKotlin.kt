@@ -33,17 +33,11 @@ object DoorMatcherPureKotlin {
     /**
      * 比对截图与所有门图，返回排序结果
      */
-    fun match(bitmap: Bitmap, doorEntries: List<Any>): List<MatchResult> {
+    fun match(bitmap: Bitmap, doorEntries: List<DoorFeatures>): List<MatchResult> {
         val shotRegion = extractRegion(bitmap, XR1, XR2, YR1, YR2, 450, 750)
         val shotHist    = computeHistogram(shotRegion)
 
-        // 实际用反射或接口访问 doorEntries — 这里直接用泛型的方式处理
-        // 为保持干净，写一个单独的 match 重载
-        @Suppress("UNCHECKED_CAST")
-        return matchWithEntries(
-            shotRegion, shotHist,
-            doorEntries as List<DoorFeatures>
-        )
+        return matchWithFeatures(shotRegion, shotHist, doorEntries)
     }
 
     /**
