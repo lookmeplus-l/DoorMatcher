@@ -106,7 +106,7 @@ class ResultActivity : AppCompatActivity() {
 
         // 构造 DoorFeatures
         val features = db.doors.map { door ->
-            DoorMatcherNative.DoorFeatures(
+            DoorFeatures(
                 filename   = door.filename,
                 fullWidth  = door.fullBitmap.width,
                 fullHeight = door.fullBitmap.height,
