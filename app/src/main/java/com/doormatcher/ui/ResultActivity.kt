@@ -11,6 +11,7 @@ import androidx.core.view.WindowInsetsControllerCompat
 import androidx.lifecycle.lifecycleScope
 import com.doormatcher.data.DoorDatabase
 import com.doormatcher.databinding.ActivityResultBinding
+import com.doormatcher.native.DoorFeatures
 import com.doormatcher.native.DoorMatcherNative
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
