@@ -19,6 +19,7 @@ import com.doormatcher.DoorMatcherApp
 import com.doormatcher.R
 import com.doormatcher.data.DoorDatabase
 import com.doormatcher.databinding.ActivityMainBinding
+import com.doormatcher.native.DoorFeatures
 import com.doormatcher.native.DoorMatcherNative
 import com.doormatcher.tflite.DoorMatcherTFLite
 import kotlinx.coroutines.Dispatchers
@@ -83,7 +84,7 @@ class MainActivity : AppCompatActivity() {
 
             // 预提取特征向量
             db.doors.forEach { door ->
-                val features = DoorMatcherNative.DoorFeatures(
+                val features = DoorFeatures(
                     filename   = door.filename,
                     fullWidth  = door.fullBitmap.width,
                     fullHeight = door.fullBitmap.height,
