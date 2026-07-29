@@ -34,10 +34,10 @@ object DoorMatcherPureKotlin {
      * 比对截图与所有门图，返回排序结果
      */
     fun match(bitmap: Bitmap, doorEntries: List<DoorFeatures>): List<MatchResult> {
-        val shotRegion = extractRegion(bitmap, XR1, XR2, YR1, YR2, 450, 750)
-        val shotHist    = computeHistogram(shotRegion)
-
-        return matchWithFeatures(shotRegion, shotHist, doorEntries)
+        val shotBitmap = extractRegion(bitmap, XR1, XR2, YR1, YR2, 450, 750)
+        val shotPixels = bitmapToFloats(shotBitmap)
+        val shotHist   = computeHistogram(shotBitmap)
+        return matchWithFeatures(shotPixels, shotHist, doorEntries)
     }
 
     /**
