@@ -27,6 +27,7 @@ import android.widget.Toast
 import androidx.core.app.NotificationCompat
 import com.doormatcher.R
 import com.doormatcher.data.DoorDatabase
+import com.doormatcher.native.DoorFeatures
 import com.doormatcher.native.DoorMatcherNative
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -253,7 +254,7 @@ class FloatingService : Service() {
 
         // 构造门图特征
         val features = db.doors.map { door ->
-            DoorMatcherNative.DoorFeatures(
+            DoorFeatures(
                 filename   = door.filename,
                 fullWidth  = door.fullBitmap.width,
                 fullHeight = door.fullBitmap.height,
