@@ -42,7 +42,7 @@ object DoorMatcherPureKotlin {
         @Suppress("UNCHECKED_CAST")
         return matchWithEntries(
             shotRegion, shotHist,
-            doorEntries as List<DoorMatcherNative.DoorFeatures>
+            doorEntries as List<DoorFeatures>
         )
     }
 
@@ -51,7 +51,7 @@ object DoorMatcherPureKotlin {
      */
     fun matchWithEntries(
         shotBitmap: Bitmap,
-        doorEntries: List<DoorMatcherNative.DoorFeatures>
+        doorEntries: List<DoorFeatures>
     ): List<MatchResult> {
         val shotPixels = bitmapToFloats(shotBitmap)
         val shotHist   = computeHistogram(shotBitmap)
@@ -78,7 +78,7 @@ object DoorMatcherPureKotlin {
     fun matchWithFeatures(
         shotRegionPixels: FloatArray,  // 450*750*3
         shotHistogram: FloatArray,       // 64*3
-        doorEntries: List<DoorMatcherNative.DoorFeatures>
+        doorEntries: List<DoorFeatures>
     ): List<MatchResult> {
         return doorEntries.map { door ->
             val cos  = cosineSim(shotRegionPixels, door.regionRGB)
